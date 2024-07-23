@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-
-
-
 export const metadata: Metadata = {
   title: "Meta Content Generator",
   description: "Generate metadata for your articles",
