@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Lato } from "next/font/google";
 import { generateMeta } from "./actions";
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { FiCopy, FiCoffee, FiZap } from 'react-icons/fi';
 import MetaInfoCard from "./ui/components/MetaInfoCard";
 import ShimmerEffect from "./ui/components/ShimmerEffect";
@@ -78,15 +77,15 @@ URL Slug: ${result.urlSlug}
   return (
     <main className={`flex min-h-screen flex-col items-center p-8 bg-gradient-to-br from-blue-50 to-indigo-100 ${latoBody.className}`}>
       <div className="w-full max-w-4xl">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className={`text-5xl font-bold ${latoBody.className}`}>
+        <div className="sm:flex justify-between space-y-3 items-center mb-8">
+          <h1 className={`text-4xl sm:text-5xl font-bold ${latoBody.className}`}>
             meet <span className={`text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600  ${latoHead.className}`}>metaeenfo.</span>
           </h1>
 
           <a href="https://buymeacoffee.com/sammy365"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center px-4 py-2 bg-yellow-400 text-yellow-900 rounded-full hover:bg-yellow-300 transition-colors duration-300"
+            className="flex w-fit ml-auto items-center px-4 py-2 bg-yellow-400 text-yellow-900 rounded-full hover:bg-yellow-300 transition-colors duration-300"
           >
             <FiCoffee className="mr-2" /> Buy me a coffee
           </a>
@@ -130,7 +129,7 @@ URL Slug: ${result.urlSlug}
 
         {!loading && result && (
           <div className="bg-white rounded-lg p-6 mb-8 w-full shadow-lg">
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex flex-col sm:flex-row space-y-4 justify-between sm:items-center mb-4">
               <h2 className="text-2xl font-semibold">Generated Meta Information</h2>
               <div className="flex items-center">
                 <span className="mr-2">SEO Score:</span>
@@ -141,7 +140,7 @@ URL Slug: ${result.urlSlug}
 
               <button
                 onClick={copyAllToClipboard}
-                className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-300 flex items-center"
+                className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-300 flex items-center w-fit"
               >
                 <FiCopy className="mr-2" /> Copy All
               </button>
