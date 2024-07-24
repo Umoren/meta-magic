@@ -4,8 +4,9 @@ import { Lato } from "next/font/google";
 import { generateMeta } from "./actions";
 import { ToastContainer, toast } from 'react-toastify';
 import { FiCopy, FiCoffee, FiZap } from 'react-icons/fi';
-import MetaInfoCard from "./ui/components/MetaInfoCard";
-import ShimmerEffect from "./ui/components/ShimmerEffect";
+import { MetaInfoCard } from "./ui/components/MetaInfoCard";
+import { ShimmerEffect } from "./ui/components/ShimmerEffect";
+import { record } from 'aws-amplify/analytics';
 
 
 const latoBody = Lato({
@@ -42,6 +43,13 @@ export default function Home() {
       const formData = new FormData(event.currentTarget);
       const metaInfo = await generateMeta(formData);
       setResult(metaInfo);
+
+      record({
+        name: 'Generated Meta Info',
+        attributes: {
+          blogTitle: formData.get('blogTitle')?.toString() || ''
+        }
+      });
     } catch (error) {
       console.error("Error generating meta information:", error);
       toast.error("Failed to generate meta information. Please try again.");

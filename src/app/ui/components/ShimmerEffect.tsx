@@ -1,4 +1,4 @@
-export default function ShimmerEffect() {
+export function ShimmerEffect() {
     return (
         <div className="animate-pulse space-y-4 bg-white rounded-lg p-6 mb-8 w-full shadow-lg">
             <div className="h-6 bg-gray-200 rounded w-1/4 mb-4"></div>
