@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { setupAnalytics } from '@/app/utils/analytics';
 import { record } from 'aws-amplify/analytics';
 
-export function AnalyticsWrapper({ children }: { children: React.ReactNode }) {
+function AnalyticsTracker() {
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
@@ -24,5 +24,16 @@ export function AnalyticsWrapper({ children }: { children: React.ReactNode }) {
         }
     }, [pathname, searchParams]);
 
-    return <>{children}</>;
+    return null;
+}
+
+export function AnalyticsWrapper({ children }: { children: React.ReactNode }) {
+    return (
+        <>
+            <Suspense fallback={null}>
+                <AnalyticsTracker />
+            </Suspense>
+            {children}
+        </>
+    );
 }

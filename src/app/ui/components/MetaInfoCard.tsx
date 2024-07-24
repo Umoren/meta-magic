@@ -9,7 +9,7 @@ interface MetaInfoCardProps {
     footer?: React.ReactNode;
 }
 
-export function MetaInfoCard({ title, content, characterCount, maxCharacters, onCopy, footer }: MetaInfoCardProps) {
+export default function MetaInfoCard({ title, content, characterCount, maxCharacters, onCopy, footer }: MetaInfoCardProps) {
     return (
         <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
             <div className="flex justify-between items-center mb-2">

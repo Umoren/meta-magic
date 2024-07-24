@@ -1,11 +1,11 @@
 "use client"
 import { useState } from "react";
 import { Lato } from "next/font/google";
-import { generateMeta } from "./actions";
+import { generateMeta } from "@/app/actions";
 import { ToastContainer, toast } from 'react-toastify';
 import { FiCopy, FiCoffee, FiZap } from 'react-icons/fi';
-import { MetaInfoCard } from "./ui/components/MetaInfoCard";
-import { ShimmerEffect } from "./ui/components/ShimmerEffect";
+import MetaInfoCard from "@/app/ui/components/MetaInfoCard";
+import { ShimmerEffect } from "@/app/ui/components/ShimmerEffect";
 import { record } from 'aws-amplify/analytics';
 
 
