@@ -1,12 +1,10 @@
 # MetaEenfo: AI-Powered Meta Information Generator
 
-MetaEenfo is an advanced AI-powered tool designed to generate optimized meta information for blog posts, articles, and web pages. Leveraging the power of Amazon Bedrock and Claude 2.1, this application helps content creators and marketers streamline their SEO efforts.
+MetaEenfo is an AI-powered tool designed to generate optimized meta information for blog posts, articles, and web pages. Leveraging the power of Amazon Bedrock and Claude 2.1, this application helps content creators and marketers streamline their SEO efforts.
 
 ## Features
 
 - Generate meta titles, descriptions, SEO keywords, and URL slugs
-- Industry-specific templates for tailored results
-- Customizable AI prompts for fine-tuned outputs
 - SEO score calculation based on best practices
 - Character count tracking for meta titles and descriptions
 - Copy-to-clipboard functionality for easy use
@@ -14,7 +12,7 @@ MetaEenfo is an advanced AI-powered tool designed to generate optimized meta inf
 
 ## Tech Stack
 
-- Frontend: Next.js with React
+- Frontend: Next.js App router
 - Styling: Tailwind CSS
 - Backend: AWS Amplify (Gen 2)
 - AI Model: Claude 2.1 via Amazon Bedrock
@@ -43,6 +41,15 @@ MetaEenfo is an advanced AI-powered tool designed to generate optimized meta inf
    ```sh
    npm run dev
    ```
+
+## Future Improvements
+
+- Implement A/B testing for meta information
+- Add competitive analysis features
+- Integrate with Google Search Console for performance tracking
+- Enhance error handling and user feedback
+- Industry-specific templates for tailored results
+- Customizable AI prompts for fine-tuned outputs
 
 ## Contributing
 
